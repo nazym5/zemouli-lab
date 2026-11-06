@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laboratoire Dr. N. Zemouli — Analyses médicales à Boufarik</title>
+<meta name="description" content="Laboratoire d'analyses médicales à Boufarik, Blida. Ouvert 7j/7, 24h/24. Plus de 18 ans d’expérience.">
+<meta name="theme-color" content="#0b4f8a">
+<meta property="og:title" content="Laboratoire Dr. N. Zemouli">
+<meta property="og:description" content="Analyses médicales à Boufarik · 7j/7 · 24h/24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #083a68;
+    --blue: #0f6cb6;
+    --sky: #2ba6dc;
+    --green: #8fc04a;
+    --green-deep: #5c8f22;
+    --ink: #10304d;
+    --muted: #5c7288;
+    --line: #dfe9f1;
+    --paper: #f4f8fb;
+    --white: #ffffff;
+    --shadow: 0 10px 30px -14px rgba(8, 58, 104, .35);
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a { color: inherit; text-decoration: none; }
+  svg { display: block; }
+  .page { max-width: 460px; margin: 0 auto; background: var(--paper); min-height: 100vh; overflow: hidden; }
+
+  /* ---------- Header ---------- */
+  .hero {
+    position: relative;
+    padding: calc(34px + env(safe-area-inset-top)) 24px 84px;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(160deg, var(--navy) 0%, var(--blue) 62%, var(--sky) 100%);
+    border-radius: 0 0 34px 34px;
+    overflow: hidden;
+  }
+  .helix { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .2; pointer-events: none; }
+  .hero > *:not(.helix) { position: relative; }
+
+  .logo {
+    width: 112px; height: 112px;
+    margin: 0 auto 16px;
+    padding: 9px;
+    background: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, .16), 0 14px 30px -10px rgba(0, 0, 0, .45);
+  }
+  .logo svg { display: block; }
+
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #cfe6f7; }
+  h1 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 29px; line-height: 1.15; margin: 7px 0 3px; }
+  .role { font-size: 15px; color: #dcecf8; font-weight: 500; }
+
+  .open {
+    display: inline-flex; align-items: center; gap: 9px;
+    margin-top: 16px; padding: 8px 15px;
+    font-weight: 800; font-size: 14px;
+    color: var(--navy); background: var(--white);
+    border-radius: 99px;
+  }
+  .dot { position: relative; width: 9px; height: 9px; border-radius: 50%; background: #4fae2b; }
+  .dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #4fae2b; animation: ping 2s ease-out infinite; }
+  @keyframes ping { to { transform: scale(3); opacity: 0; } }
+
+  /* ---------- Layout ---------- */
+  main { padding: 0 16px; margin-top: -60px; position: relative; }
+  section { margin-bottom: 28px; }
+  h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 21px; color: var(--navy); margin: 0 4px 12px; }
+
+  .card {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 14px;
+    box-shadow: var(--shadow);
+    transition: transform .14s ease, box-shadow .14s ease;
+  }
+  a.card:active, a.tile:active { transform: scale(.97); }
+  a:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; }
+
+  .stack { display: grid; gap: 10px; }
+  .ico {
+    flex: none; width: 48px; height: 48px;
+    display: grid; place-items: center;
+    border-radius: 15px;
+    color: var(--white);
+    background: linear-gradient(145deg, var(--blue), var(--sky));
+  }
+  .ico svg { width: 23px; height: 23px; }
+  .ico.soft { color: var(--blue); background: #e6f2fa; }
+  .txt { flex: 1; min-width: 0; }
+  .lbl { display: block; font-size: 13px; font-weight: 600; color: var(--muted); }
+  .val { display: block; font-size: 20px; font-weight: 800; color: var(--navy); font-variant-numeric: tabular-nums; letter-spacing: .01em; white-space: nowrap; }
+  .val.mail { font-size: 15.5px; letter-spacing: 0; overflow: hidden; text-overflow: ellipsis; }
+  .go {
+    flex: none; padding: 9px 13px;
+    font-size: 13px; font-weight: 800;
+    color: var(--white); background: var(--green-deep);
+    border-radius: 99px;
+  }
+
+  /* Socials */
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tile {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    padding: 15px 4px 13px;
+    font-size: 13.5px; font-weight: 700; color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform .14s ease;
+    text-align: center;
+  }
+  .tile i { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; color: var(--white); }
+  .tile i svg { width: 24px; height: 24px; }
+  .fb { background: #1877f2; }
+  .ig { background: linear-gradient(45deg, #f9a825, #e1306c 55%, #8a3ab9); }
+  .tt { background: #111; }
+  .handle { display: block; max-width: 100%; padding: 0 2px; font-size: 11px; white-space: nowrap; font-weight: 600; line-height: 1.25; color: var(--muted); margin-top: -5px; }
+
+  /* Address */
+  .address { flex-wrap: wrap; }
+  .address .plain { font-size: 15.5px; font-weight: 700; color: var(--navy); line-height: 1.35; }
+
+  /* Strengths */
+  .big {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    color: var(--white);
+    background: linear-gradient(120deg, var(--navy), var(--blue));
+    border-radius: 20px;
+  }
+  .big strong { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 46px; line-height: 1; }
+  .big span { font-size: 15px; font-weight: 600; line-height: 1.3; }
+
+  .points { list-style: none; padding: 4px 16px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; }
+  .points li { display: flex; gap: 12px; padding: 13px 0; font-size: 14.5px; font-weight: 600; color: #274a67; border-bottom: 1px solid var(--line); }
+  .points li:last-child { border-bottom: 0; }
+  .points svg { flex: none; width: 21px; height: 21px; margin-top: 1px; color: var(--green-deep); }
+
+  /* Partners highlight */
+  .partners {
+    position: relative;
+    padding: 20px 16px 18px;
+    color: var(--white);
+    text-align: center;
+    background: linear-gradient(150deg, var(--navy), var(--blue) 75%, var(--sky));
+    border-radius: 24px;
+    box-shadow: 0 16px 34px -16px rgba(8, 58, 104, .75);
+  }
+  .partners .tag { font-size: 12px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: #d4ec9f; }
+  .partners h2 { color: var(--white); font-size: 23px; line-height: 1.2; margin: 5px 0 15px; }
+  .labs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .lab { padding: 13px 2px 11px; color: var(--navy); background: var(--white); border-radius: 15px; }
+  .lab b { display: block; font-size: 15px; font-weight: 800; letter-spacing: .02em; }
+  .lab span { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 600; color: var(--muted); }
+  .partners p { margin-top: 14px; font-size: 13.5px; font-weight: 600; line-height: 1.4; color: #dcecf8; }
+
+  footer { padding: 4px 24px calc(30px + env(safe-area-inset-bottom)); text-align: center; font-size: 12.5px; color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dot::after { animation: none; }
+    a { transition: none !important; }
+  }
+  @media (max-width: 350px) {
+    .val { font-size: 17.5px; }
+    .go { display: none; }
+    .handle { font-size: 10.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <svg class="helix" viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true">
+      <path d="M-10 60 C 40 10, 70 10, 120 60 S 200 110, 250 60 S 340 10, 410 60"/>
+      <path d="M-10 60 C 40 110, 70 110, 120 60 S 200 10, 250 60 S 340 110, 410 60"/>
+      <path d="M30 34v52M70 22v76M104 38v44M150 38v44M185 22v76M220 38v44M280 38v44M315 22v76M355 38v44" stroke-width="1.5"/>
+      <path d="M-10 290 C 40 240, 70 240, 120 290 S 200 340, 250 290 S 340 240, 410 290"/>
+      <path d="M-10 290 C 40 340, 70 340, 120 290 S 200 240, 250 290 S 340 340, 410 290"/>
+      <path d="M30 264v52M70 252v76M104 268v44M150 268v44M185 252v76M220 268v44M280 268v44M315 252v76M355 268v44" stroke-width="1.5"/>
+    </svg>
+    <div class="logo"><svg viewBox="110 110 860 860" width="94" height="94" role="img" aria-label="Logo Zemouli Lab" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><g transform="translate(540 540) scale(.97) translate(-559 -544)"><circle cx="392" cy="170" r="12" fill="#2b9ac9"/><circle cx="441" cy="150" r="12" fill="#17406f"/><circle cx="428" cy="188" r="12" fill="#8db84a"/><path d="M384 212H462V394C380 440 320 520 320 610C320 650 322 680 328 708H280C272 680 268 650 268 610C268 500 340 420 430 372V248H384A18 18 0 0 1 384 212Z" fill="#0d4f92"/><text x="336" y="742" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="92" fill="#7fb83f">ZL</text><path d="M640 350L668 392C745 440 790 530 790 625C790 785 700 910 555 910C460 910 380 870 330 805H412C450 840 500 858 560 858C660 858 738 760 738 630C738 550 695 480 632 436L590 420Z" fill="#1ea0d8"/><rect x="242" y="752" width="250" height="55" rx="27" fill="#1ea0d8"/><g transform="translate(482 607) rotate(28.7)" fill="#1ea0d8"><rect x="-68" y="-18" width="136" height="38" rx="9"/><path d="M-52 -10L-44 -328Q-44 -362 -16 -372H16Q44 -362 44 -328L52 -10Z"/><rect x="-13" y="-400" width="26" height="40"/><rect x="-18" y="-428" width="36" height="32" rx="9"/></g><path d="M712 605C708 710 640 800 552 825" fill="none" stroke="#7fb83f" stroke-width="9" stroke-linecap="round"/><path id="n" d="M696 950C800 882 880 760 880 496" fill="none"/><text font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="54" letter-spacing="5" fill="#2b2f63"><textPath href="#n">ZEMOULI. LAB</textPath></text></g></svg></div>
+    <p class="kicker">Laboratoire d’analyses médicales</p>
+    <h1>Dr. N. Zemouli<br>épouse Larfi</h1>
+    <p class="role">Pharmacienne Biologiste</p>
+    <p class="open"><span class="dot" aria-hidden="true"></span>Ouvert 7j/7 · 24h/24</p>
+  </header>
+
+  <main>
+
+    <!-- CONTACT -->
+    <section class="stack" aria-label="Nous contacter">
+      <a class="card" href="tel:+213659090070" aria-label="Appeler le 0659 09 00 70">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg></span>
+        <span class="txt"><span class="lbl">Mobile 1</span><span class="val">0659 09 00 70</span></span>
+        <span class="go">Appeler</span>
+      </a>
+      <a class="card" href="tel:+213556293861" aria-label="Appeler le 0556 29 38 61">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg></span>
+        <span class="txt"><span class="lbl">Mobile 2</span><span class="val">0556 29 38 61</span></span>
+        <span class="go">Appeler</span>
+      </a>
+      <a class="card" href="mailto:labo.zl.bfk@gmail.com" aria-label="Envoyer un e-mail à labo.zl.bfk@gmail.com">
+        <span class="ico soft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 5.500L20 8"/></svg></span>
+        <span class="txt"><span class="lbl">E-mail</span><span class="val mail">labo.zl.bfk@gmail.com</span></span>
+      </a>
+    </section>
+
+    <!-- PARTNERS HIGHLIGHT -->
+    <section class="partners">
+      <p class="tag" style="margin:0">Partenaires internationaux</p>
+      <h2>Conventionné avec</h2>
+      <div class="labs">
+        <div class="lab"><b>CERBA</b><span>France</span></div>
+        <div class="lab"><b>BIOMNIS</b><span>France</span></div>
+        <div class="lab"><b>SYNLAB</b><span>Allemagne</span></div>
+      </div>
+      <p>Ainsi que de nombreuses sociétés et institutions publiques et privées</p>
+    </section>
+
+    <!-- SOCIALS -->
+    <section>
+      <h2>Suivez-nous</h2>
+      <div class="tiles">
+        <a class="tile" href="https://www.facebook.com/profile.php?id=61596247682056" target="_blank" rel="noopener">
+          <i class="fb"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.500h2.500l1-4H14v-2c0-1.030 0-2 2-2h1.500V2.140c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.700v2.800H7v4h3V22h4v-8.500z"/></svg></i>
+          Facebook
+          <span class="handle">Notre page</span>
+        </a>
+        <a class="tile" href="https://www.instagram.com/laboratoire_dr.zemouli" target="_blank" rel="noopener">
+          <i class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"/></svg></i>
+          Instagram
+          <span class="handle">@laboratoire_<br>dr.zemouli</span>
+        </a>
+        <a class="tile" href="https://www.tiktok.com/@laboratoir.dr.zem" target="_blank" rel="noopener">
+          <i class="tt"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8.245V15.500a6.500 6.500 0 1 1-5-6.326v3.163a3.500 3.500 0 1 0 2 3.163V2h3a5 5 0 0 0 5 5v3a7.966 7.966 0 0 1-5-1.755z"/></svg></i>
+          TikTok
+          <span class="handle">@laboratoir.<br>dr.zem</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ADDRESS -->
+    <section>
+      <h2>Nous trouver</h2>
+      <a class="card address" href="https://www.google.com/maps/search/?api=1&query=HWH4%2B5HX%2C%20Boufarik" target="_blank" rel="noopener">
+        <span class="ico soft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.200 7-11.500a7 7 0 1 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></span>
+        <span class="txt"><span class="plain">Cité 18, à côté de la mosquée Ali Ibn Abi Taleb, Boufarik – Blida</span></span>
+        <span class="go">Y aller</span>
+      </a>
+    </section>
+
+    <!-- STRENGTHS -->
+    <section>
+      <h2>Nos points forts</h2>
+      <div class="big"><strong>+18</strong><span>ans d’expérience à votre service</span></div>
+      <ul class="points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Fiabilité : plateau technique de hautes technologies, de références internationales</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Rendu extrêmement rapide des résultats (selon les bilans demandés)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Un SMS dès que le bilan est validé par l’équipe médicale</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.500 4.500 4.500L19 7.500"/></svg>Prélèvement à domicile gratuit pour les patients à mobilité réduite</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>Laboratoire Dr. N. Zemouli · Boufarik, Blida</footer>
+</div>
+</body>
+</html>
